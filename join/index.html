@@ -1,69 +1,311 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Unscriptulous — Join the Team</title>
-  <meta name="description" content="Join Unscriptulous — a London-based narrative improv ensemble. We're seeking new members passionate about long-form storytelling and collaborative creation." />
-  <style>
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial;background:#0b1020;color:#e6eaff;padding:2rem;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    .wrap{max-width:800px;margin:0 auto}
-    h1{font-size:2rem;margin-bottom:.5rem;color:#6ee7ff}
-    h2{font-size:1.3rem;color:#9ae6ff;margin-top:2rem}
-    p{margin:.8rem 0;color:#ccd2f0}
-    a{color:#6ee7ff;text-decoration:none}
-    a:hover{text-decoration:underline}
-    ul{margin:1rem 0;padding-left:1.5rem}
-    li{margin:.4rem 0}
-    .back-home{display:block;text-align:centre;margin:2rem auto 2.5rem auto;font-size:1rem;font-weight:600;letter-spacing:.5px;background:rgba(255,255,255,0.08);padding:10px 18px;border-radius:10px;max-width:200px;box-shadow:0 4px 12px rgba(0,0,0,0.25);transition:background .2s ease;}
-    .back-home:hover{background:rgba(255,255,255,0.15)}
-    footer{text-align:center;margin-top:3rem;color:#aab4d6;font-size:.85rem}
-    .acronym { text-decoration: underline dotted; cursor: help; position: relative; }
-    .acronym:hover::after { content: attr(data-full); position: absolute; left: 0; bottom: -1.8em; background: rgba(20,30,50,0.95); color: #fff; padding: 6px 10px; border-radius: 6px; white-space: nowrap; font-size: 0.85em; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unscriptulous — Join the Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #050721;
+    --surface:   #0c0f2e;
+    --border:    rgba(255,255,255,0.08);
+    --accent:    #6c8fff;
+    --accent-dim:#3a5ad0;
+    --text:      #e8eaf6;
+    --muted:     #8991b8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 62%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 68% 9%,  rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 82% 44%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 91% 73%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 24% 91%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 47% 35%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 6%  55%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 77% 22%, rgba(255,255,255,0.6) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(5,7,33,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .nav-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .nav-wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .nav-sub {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.63rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-back {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--text); }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .page-header {
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-intro {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 600px;
+  }
+
+  section { margin-bottom: 2.75rem; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+    color: var(--text);
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    bottom: 0.2em;
+    width: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ul li {
+    display: flex;
+    gap: 0.75rem;
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  ul li::before {
+    content: '—';
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  ul li strong { color: var(--text); font-weight: 500; }
+
+  p {
+    color: var(--muted);
+    font-size: 0.94rem;
+    margin-bottom: 0.65rem;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .apply-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin-top: 1.25rem;
+  }
+
+  .apply-box p { margin-bottom: 1rem; }
+
+  .apply-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1.25rem;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .apply-link:hover { background: var(--accent-dim); transform: translateY(-1px); }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0.85rem 1.25rem; }
+    .nav-wordmark { display: none; }
+    main { padding: 2.5rem 1.25rem 4rem; }
+    .apply-box { padding: 1.25rem; }
+  }
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <h1>Join Unscriptulous</h1>
-        <a class="back-home" href="/">← Back to Home</a>
-     <p>Unscriptulous is a long-form narrative team formed in May 2025. We have been running our Disaster Movie show since January 2026, and are currently developing a second production.</p>
-     <p>We’re looking for new ensemble members who love imaginative, character-led storytelling and thrive in a team that’s creative, expressive, and unafraid to explore the edges of humour and emotion.</p>
- 
 
+<nav>
+  <a class="nav-logo" href="https://unscriptulous.com/">
+    <img src="https://unscriptulous.com/assets/unscriptulous-main-logo.png" alt="Unscriptulous logo">
+    <span class="nav-wordmark">
+      Unscriptulous
+      <span class="nav-sub">Long-form narrative improv</span>
+    </span>
+  </a>
+  <a class="nav-back" href="https://unscriptulous.com/">&#8592; Back to Home</a>
+</nav>
 
-    <h2>Experience & Training</h2>
+<main>
+  <header class="page-header">
+    <span class="eyebrow">Open call</span>
+    <h1>Join the Team</h1>
+    <p class="page-intro">Unscriptulous is a long-form narrative ensemble formed in May 2025. We've been running our Disaster Movie show since January 2026 and are now developing a second production. We're looking for new members.</p>
+  </header>
+
+  <section>
+    <h2>Experience &amp; Training</h2>
     <ul>
-      <li>Completion of <strong>Free Association Level 3</strong> (or equivalent training) is the minimum we expect — ideally, applicants will have progressed beyond this or have equivalent experience at another top improv school.</li>
-      <li>Experience in narrative improv — either through team performance or the <strong>Free Association Narrative Course</strong> (or similar at another long-form school) — is required.</li>
-      <li>Experience performing with teams in other improv formats is a plus.</li>
+      <li>Completion of <strong>Free Association Level 3</strong> (or equivalent) is the minimum — ideally you'll have progressed beyond this, or have comparable experience at another top improv school.</li>
+      <li>Experience in narrative improv — through team performance or the <strong>Free Association Narrative Course</strong> (or similar at another long-form school) — is required.</li>
+      <li>Experience performing with teams in other formats is a plus.</li>
     </ul>
+  </section>
 
-    <h2>Who We’re Looking For</h2>
-    <p>Adventurous, generous performers who are comfortable taking creative risks together. We value openness, empathy, and the ability to connect with both fellow players and audiences through honesty and play.</li>
-    </p>
+  <section>
+    <h2>Who We're Looking For</h2>
+    <p>Adventurous, generous performers who are comfortable taking creative risks together. We value openness, empathy, and the ability to connect with both fellow players and audiences through honesty and play.</p>
+  </section>
 
+  <section>
     <h2>Commitment</h2>
     <ul>
-      <li>Rehearsals commitment in 3-4 month blocks. Rehearsals take place roughly every other week on average, with regular performances in London.</li>
+      <li>Rehearsal blocks of 3–4 months, roughly every other week on average, with regular performances in London.</li>
       <li>A shared commitment to creating excellent, high-quality improv.</li>
-      <li>A willingness to take on and complete necessary administrative or organisational roles — from show logistics to production or marketing — to help the team operate professionally.</li>
-      <li>We’re looking for players who can prioritise this ensemble alongside their other projects — ideally those not spread across too many teams — so they can contribute consistently and with focus.</li>
+      <li>Willingness to take on administrative or organisational roles — from show logistics to production or marketing — to help the team operate professionally.</li>
+      <li>We're looking for players who can prioritise this ensemble and are not spread too thin across other teams, contributing consistently and with focus.</li>
     </ul>
+  </section>
 
+  <section>
     <h2>How to Apply</h2>
-    <p>If this sounds like you, send a short note about your experience and why you’d like to join to <a href="mailto:hello@unscriptulous.com">hello@unscriptulous.com</a>. Please include:</p>
-    <ul>
-      <li>Your current teams or projects.</li>
-      <li>Your improv training and schools attended.</li>
-      <li>Links to your social media handles (Instagram, TikTok, etc.).</li>
-      <li>Team administrative tasks you would be able to commit to and any professional or creative skills (e.g., design, production, admin, marketing).</li>
-    </ul>
+    <div class="apply-box">
+      <p>Send a short note about your experience and why you'd like to join to <strong>hello@unscriptulous.com</strong>. Please include:</p>
+      <ul>
+        <li>Your current teams or projects.</li>
+        <li>Your improv training and schools attended.</li>
+        <li>Links to your social media handles (Instagram, TikTok, etc.).</li>
+        <li>Administrative tasks you could commit to and any professional or creative skills (design, production, admin, marketing).</li>
+      </ul>
+      <a class="apply-link" href="mailto:hello@unscriptulous.com">hello@unscriptulous.com</a>
+    </div>
+  </section>
 
+  <section>
     <h2>Application Process</h2>
-    <p>We’re keeping the application process fluid. Our next steps will depend on the response we get. We want to make sure everyone gets a fair, supportive chance to play with us.</p>
+    <p>We're keeping the process fluid. Next steps will depend on the response we get. We want everyone to have a fair, supportive chance to play with us.</p>
+  </section>
+</main>
 
-    <footer>© <span id="year"></span> Unscriptulous</footer>
-  </main>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<footer>&#169; Unscriptulous &nbsp;&middot;&nbsp; Made with improv, not a script</footer>
+
 </body>
 </html>
