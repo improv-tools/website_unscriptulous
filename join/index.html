@@ -1,320 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Unscriptulous — Join the Team</title>
-<style>
-  :root {
-    --bg:        #050721;
-    --surface:   #0c0f2e;
-    --border:    rgba(255,255,255,0.08);
-    --accent:    #6c8fff;
-    --accent-dim:#3a5ad0;
-    --text:      #e8eaf6;
-    --muted:     #8991b8;
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unscriptulous — Join the Team</title>
+  <meta name="description" content="Join Unscriptulous — a London-based narrative improv ensemble. We're seeking new members passionate about long-form storytelling and collaborative creation." />
+  <meta name="theme-color" content="#050721" />
+  <style>
+    :root {
+      --bg:#050721;
+      --bg-2:#081032;
+      --panel:rgba(10,16,48,.84);
+      --line:rgba(255,255,255,.12);
+      --text:#fff7ed;
+      --muted:#cdd6ff;
+      --orange:#ff5a0a;
+      --orange-dark:#7b230e;
+      --amber:#ffbf2d;
+      --cyan:#37e5ff;
+      --shadow:0 18px 50px rgba(0,0,0,.42);
+      --radius:26px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(55,229,255,.12), transparent 18rem),
+        radial-gradient(circle at 80% 0%, rgba(255,90,10,.16), transparent 22rem),
+        radial-gradient(circle at 50% 110%, rgba(255,191,45,.10), transparent 24rem),
+        var(--bg);
+      overflow-x:hidden;
+    }
+    body::before {
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      opacity:.86;
+      background-image:
+        radial-gradient(circle,#86a2ff 0 1.5px,transparent 1.7px),
+        radial-gradient(circle,#9bb4ff 0 1px,transparent 1.2px);
+      background-size:96px 96px,140px 140px;
+      background-position:0 0,40px 36px;
+    }
+    img { max-width:100%; display:block; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1160px; margin:0 auto; padding:0 22px; }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+    /* ── Header / nav — identical to main page ── */
+    header {
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter:blur(14px) saturate(140%);
+      background:linear-gradient(180deg,rgba(5,7,33,.92),rgba(5,7,33,.70));
+      border-bottom:1px solid var(--line);
+    }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0; }
+    .brand { display:flex; align-items:center; gap:14px; min-width:0; }
+    .brand-mark { width:56px; height:56px; border-radius:16px; object-fit:cover; border:2px solid rgba(255,255,255,.72); box-shadow:var(--shadow); }
+    .brand-copy { min-width:0; }
+    .brand-title { margin:0; font-size:clamp(18px,2.1vw,28px); line-height:1; text-transform:uppercase; font-weight:1000; letter-spacing:.02em; color:var(--orange); text-shadow:2px 2px 0 #fff, 5px 5px 0 var(--orange-dark); }
+    .brand-sub { margin:5px 0 0; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.14em; }
+    .menu { display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-link { font-weight:900; font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+    .nav-link:hover { color:#fff; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
+    /* ── Page content ── */
+    .page-wrap { max-width:820px; margin:0 auto; padding:56px 22px 80px; }
 
-  /* subtle starfield */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.5) 0%, transparent 100%),
-      radial-gradient(1px 1px at 35% 62%, rgba(255,255,255,0.25) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 68% 9%, rgba(255,255,255,0.5) 0%, transparent 100%),
-      radial-gradient(1px 1px at 82% 44%, rgba(255,255,255,0.2) 0%, transparent 100%),
-      radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
-      radial-gradient(1px 1px at 91% 73%, rgba(255,255,255,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 24% 91%, rgba(255,255,255,0.18) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 47% 35%, rgba(255,255,255,0.5) 0%, transparent 100%),
-      radial-gradient(1px 1px at 6%  55%, rgba(255,255,255,0.28) 0%, transparent 100%),
-      radial-gradient(1px 1px at 77% 22%, rgba(255,255,255,0.5) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 0;
-  }
+    .page-header { margin-bottom:48px; }
+    .section-kicker { margin:0 0 8px; color:var(--cyan); font-size:12px; font-weight:950; text-transform:uppercase; letter-spacing:.16em; }
+    .page-title { margin:0 0 16px; font-size:clamp(42px,8vw,72px); line-height:.92; text-transform:uppercase; font-weight:1000; letter-spacing:-.03em; color:var(--orange); text-shadow:3px 3px 0 #fff, 9px 9px 0 var(--orange-dark); }
+    .page-lead { margin:0; color:var(--muted); font-size:clamp(16px,2vw,19px); line-height:1.65; max-width:60ch; }
 
-  /* ── Nav ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    padding: 0.9rem 2rem;
-    background: rgba(5,7,33,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    gap: 1rem;
-  }
+    .card { background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.045)); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
 
-  /* Logo block: rounded-square image crop + text beneath — matches main page top-left */
-  .nav-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    text-decoration: none;
-    color: var(--text);
-    flex-shrink: 0;
-  }
+    .section { margin-bottom:28px; }
+    .section-inner { padding:28px 32px; }
 
-  .nav-logo-img-wrap {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-shrink: 0;
-    background: #0a0d2a; /* fallback while image loads */
-  }
+    .section-inner h2 { margin:0 0 16px; font-size:clamp(22px,3.5vw,36px); line-height:1; text-transform:uppercase; font-weight:1000; letter-spacing:-.02em; color:#fff; text-shadow:2px 2px 0 var(--orange-dark); }
 
-  .nav-logo-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+    ul.item-list { list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+    ul.item-list li { display:grid; grid-template-columns:1.4em 1fr; gap:0; color:var(--muted); font-size:16px; line-height:1.65; }
+    ul.item-list li::before { content:"✦"; color:var(--cyan); padding-top:2px; }
+    ul.item-list li strong { color:var(--text); font-weight:700; }
 
-  .nav-wordmark {
-    font-size: 0.65rem;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    line-height: 1;
-    white-space: nowrap;
-  }
+    p.body-text { margin:0; color:var(--muted); font-size:16px; line-height:1.65; }
 
-  .nav-back {
-    margin-left: auto;
-    font-size: 0.8rem;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-    transition: color 0.2s;
-  }
-  .nav-back:hover { color: var(--text); }
+    /* ── Apply box ── */
+    .apply-inner { padding:28px 32px; background:linear-gradient(135deg, rgba(255,90,10,.12), rgba(55,229,255,.08)); }
+    .apply-inner h2 { margin:0 0 12px; font-size:clamp(22px,3.5vw,36px); line-height:1; text-transform:uppercase; font-weight:1000; letter-spacing:-.02em; color:#fff; text-shadow:2px 2px 0 var(--orange-dark); }
+    .apply-inner p { margin:0 0 16px; color:var(--muted); font-size:16px; line-height:1.65; }
+    .apply-inner p:last-of-type { margin-bottom:20px; }
 
-  /* ── Main ── */
-  main {
-    position: relative;
-    z-index: 1;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 4rem 2rem 6rem;
-  }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:13px 22px; border-radius:999px; border:1px solid rgba(255,255,255,.14); font-weight:950; text-transform:uppercase; letter-spacing:.05em; box-shadow:var(--shadow); }
+    .btn-primary { background:linear-gradient(135deg,var(--orange),var(--amber)); color:#2a0b02; }
+    .btn:hover { transform:translateY(-2px); }
 
-  .page-header {
-    margin-bottom: 3.5rem;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2rem;
-  }
+    .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:36px; }
+    .back-link:hover { color:#fff; }
+    .back-link::before { content:"←"; font-size:16px; }
 
-  .eyebrow {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
+    footer { padding:32px 0 28px; color:var(--muted); text-align:center; font-size:13px; }
 
-  h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.02em;
-  }
-
-  .page-intro {
-    color: var(--muted);
-    font-size: 1rem;
-    max-width: 600px;
-  }
-
-  section { margin-bottom: 2.75rem; }
-
-  h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 1.1rem;
-    color: var(--text);
-    position: relative;
-    padding-left: 0.9rem;
-    letter-spacing: -0.01em;
-  }
-
-  h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.2em;
-    bottom: 0.2em;
-    width: 2px;
-    background: var(--accent);
-    border-radius: 2px;
-  }
-
-  /* List: dash is a grid column so text always flows inline with strong */
-  ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-
-  ul li {
-    display: grid;
-    grid-template-columns: 1.2em 1fr;
-    column-gap: 0.5rem;
-    color: var(--muted);
-    font-size: 0.94rem;
-    line-height: 1.65;
-  }
-
-  ul li::before {
-    content: '—';
-    color: var(--accent);
-    padding-top: 0.02em;
-  }
-
-  ul li > span { display: block; }
-
-  ul li strong { color: var(--text); font-weight: 600; }
-
-  p {
-    color: var(--muted);
-    font-size: 0.94rem;
-    margin-bottom: 0.65rem;
-  }
-  p:last-child { margin-bottom: 0; }
-
-  /* ── Apply box ── */
-  .apply-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.75rem 2rem;
-    margin-top: 1.25rem;
-  }
-
-  .apply-box p { margin-bottom: 1rem; }
-
-  .apply-link {
-    display: inline-flex;
-    align-items: center;
-    background: var(--accent);
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.88rem;
-    letter-spacing: 0.04em;
-    padding: 0.65rem 1.4rem;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 1.25rem;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .apply-link:hover { background: var(--accent-dim); transform: translateY(-1px); }
-
-  /* ── Footer ── */
-  footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 2rem;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.78rem;
-    letter-spacing: 0.05em;
-  }
-
-  @media (max-width: 600px) {
-    nav { padding: 0.75rem 1.25rem; }
-    main { padding: 2.5rem 1.25rem 4rem; }
-    .apply-box { padding: 1.25rem; }
-  }
-</style>
+    @media (max-width:600px) {
+      .section-inner, .apply-inner { padding:20px; }
+      .page-wrap { padding:36px 16px 60px; }
+    }
+  </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="https://unscriptulous.com/">
-    <div class="nav-logo-img-wrap">
-      <img src="https://unscriptulous.com/assets/unscriptulous-main-logo.png" alt="Unscriptulous brand artwork">
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://unscriptulous.com/" aria-label="Unscriptulous home">
+        <img class="brand-mark" src="https://unscriptulous.com/assets/unscriptulous-brand-crop.png" alt="Unscriptulous brand artwork" />
+        <div class="brand-copy">
+          <p class="brand-title">Unscriptulous</p>
+          <p class="brand-sub">Long-form narrative improv</p>
+        </div>
+      </a>
+      <div class="menu">
+        <a class="nav-link" href="https://unscriptulous.com/#show">Current show</a>
+        <a class="nav-link" href="https://unscriptulous.com/#about">About</a>
+        <a class="nav-link" href="https://unscriptulous.com/#cast">Cast</a>
+        <a class="nav-link" href="https://unscriptulous.com/#contact">Contact</a>
+      </div>
     </div>
-    <span class="nav-wordmark">Long-form narrative improv</span>
-  </a>
-  <a class="nav-back" href="https://unscriptulous.com/">&#8592; Back to Home</a>
-</nav>
-
-<main>
-  <header class="page-header">
-    <span class="eyebrow">Open call</span>
-    <h1>Join the Team</h1>
-    <p class="page-intro">Unscriptulous is a long-form narrative ensemble formed in May 2025, currently developing our second production. We're looking for new members who love imaginative, character-led storytelling and thrive in a creative, expressive team.</p>
   </header>
 
-  <section>
-    <h2>Experience &amp; Training</h2>
-    <ul>
-      <li><span>Completion of <strong>Free Association Level 3</strong> (or equivalent) is the minimum — ideally you'll have progressed beyond this, or have comparable experience at another top improv school.</span></li>
-      <li><span>Experience in narrative improv — through team performance or the <strong>Free Association Narrative Course</strong> (or similar at another long-form school) — is required.</span></li>
-      <li><span>Experience performing with teams in other formats is a plus.</span></li>
-    </ul>
-  </section>
+  <div class="page-wrap">
+    <a class="back-link" href="https://unscriptulous.com/">Back to Home</a>
 
-  <section>
-    <h2>Who We're Looking For</h2>
-    <p>Adventurous, generous performers comfortable taking creative risks together. We value openness, empathy, and the ability to connect with both fellow players and audiences through honesty and play.</p>
-  </section>
+    <header class="page-header">
+      <p class="section-kicker">Open call</p>
+      <h1 class="page-title">Join the Team</h1>
+      <p class="page-lead">Unscriptulous is a long-form narrative ensemble formed in May 2025, currently developing our second production. We're looking for new members who love imaginative, character-led storytelling and thrive in a creative, expressive team.</p>
+    </header>
 
-  <section>
-    <h2>Commitment</h2>
-    <ul>
-      <li><span>Rehearsal blocks of 3–4 months, roughly every other week on average, with regular performances in London.</span></li>
-      <li><span>A shared commitment to creating excellent, high-quality improv.</span></li>
-      <li><span>Willingness to take on administrative or organisational roles — from show logistics to production or marketing — to help the team operate professionally.</span></li>
-      <li><span>We're looking for players who can prioritise this ensemble and are not spread too thin across other teams, contributing consistently and with focus.</span></li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>How to Apply</h2>
-    <div class="apply-box">
-      <p>Send a short note about your experience and why you'd like to join to <strong>hello@unscriptulous.com</strong>. Please include:</p>
-      <ul>
-        <li><span>Your current teams or projects.</span></li>
-        <li><span>Your improv training and schools attended.</span></li>
-        <li><span>Links to your social media handles (Instagram, TikTok, etc.).</span></li>
-        <li><span>Administrative tasks you could commit to and any professional or creative skills (design, production, admin, marketing).</span></li>
-      </ul>
-      <a class="apply-link" href="mailto:hello@unscriptulous.com">hello@unscriptulous.com</a>
+    <div class="section">
+      <div class="card section-inner">
+        <h2>Experience &amp; Training</h2>
+        <ul class="item-list">
+          <li><span>Completion of <strong>Free Association Level 3</strong> (or equivalent) is the minimum — ideally you'll have progressed beyond this, or have comparable experience at another top improv school.</span></li>
+          <li><span>Experience in narrative improv — through team performance or the <strong>Free Association Narrative Course</strong> (or similar at another long-form school) — is required.</span></li>
+          <li><span>Experience performing with teams in other formats is a plus.</span></li>
+        </ul>
+      </div>
     </div>
-  </section>
 
-  <section>
-    <h2>Application Process</h2>
-    <p>We're keeping the process fluid. Next steps will depend on the response we get — we want everyone to have a fair, supportive chance to play with us.</p>
-  </section>
-</main>
+    <div class="section">
+      <div class="card section-inner">
+        <h2>Who We're Looking For</h2>
+        <p class="body-text">Adventurous, generous performers comfortable taking creative risks together. We value openness, empathy, and the ability to connect with both fellow players and audiences through honesty and play.</p>
+      </div>
+    </div>
 
-<footer>&#169; Unscriptulous &nbsp;&middot;&nbsp; Made with improv, not a script</footer>
+    <div class="section">
+      <div class="card section-inner">
+        <h2>Commitment</h2>
+        <ul class="item-list">
+          <li><span>Rehearsal blocks of 3–4 months, roughly every other week on average, with regular performances in London.</span></li>
+          <li><span>A shared commitment to creating excellent, high-quality improv.</span></li>
+          <li><span>Willingness to take on administrative or organisational roles — from show logistics to production or marketing — to help the team operate professionally.</span></li>
+          <li><span>We're looking for players who can prioritise this ensemble and are not spread too thin across other teams, contributing consistently and with focus.</span></li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="section">
+      <div class="card section-inner">
+        <h2>Application Process</h2>
+        <p class="body-text">We're keeping the process fluid. Next steps will depend on the response we get — we want everyone to have a fair, supportive chance to play with us.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card apply-inner">
+        <h2>How to Apply</h2>
+        <p>Send a short note about your experience and why you'd like to join to <strong>hello@unscriptulous.com</strong>. Please include:</p>
+        <ul class="item-list">
+          <li><span>Your current teams or projects.</span></li>
+          <li><span>Your improv training and schools attended.</span></li>
+          <li><span>Links to your social media handles (Instagram, TikTok, etc.).</span></li>
+          <li><span>Administrative tasks you could commit to, and any professional or creative skills (design, production, admin, marketing).</span></li>
+        </ul>
+        <br/>
+        <a class="btn btn-primary" href="mailto:hello@unscriptulous.com">hello@unscriptulous.com</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Unscriptulous · Made with improv, not a script</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
